@@ -1,0 +1,66 @@
+._styles-module__rewards-spin-game__2zZiG{
+	margin:0;
+	padding:0;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	height:100%;
+	overflow:hidden;
+	position: relative;
+
+	}
+._styles-module__canvas-container__28Wol {
+  background-color: #2C8AF7;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  min-height: 450px;
+  overflow: hidden;
+  position: relative;
+  min-width: 450px;
+  }
+  ._styles-module__wheel__1E7u3 {
+  border-radius: 50%;
+  border: 5px solid #A72810;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+  height: 400px;
+  left: 0;
+  position: absolute;
+  margin: 21px;
+  top: 0;
+  transition: transform 4s cubic-bezier(.5, -0.08, .5, 1.04);
+  width: 400px;
+  }
+    
+._styles-module__spin__1sp4O{
+  position: absolute;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:10;
+  background-color: #A72810;
+  text-transform: uppercase;
+  text-transform: uppercase;
+  font-size:20px;
+  color:var(--white);
+  width: 60px;
+  height:60px;
+  font-family: sans-serif;
+  border-radius:50%;
+  outline:none;
+  letter-spacing: 1px;
+  cursor: pointer;
+
+}
+
+
+
+._styles-module__arrow__35l6Q{
+  position: absolute;
+  top:24px;
+  left:50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
