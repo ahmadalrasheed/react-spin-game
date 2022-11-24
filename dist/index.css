@@ -1,4 +1,4 @@
-._styles-module__rewards-spin-game__2zZiG{
+._2zZiG{
 	margin:0;
 	padding:0;
 	display:flex;
@@ -9,7 +9,7 @@
 	position: relative;
 
 	}
-._styles-module__canvas-container__28Wol {
+._28Wol {
   background-color: #2C8AF7;
   box-shadow: 0 0 8px rgba(0, 0, 0, .3);
   border-radius: 50%;
@@ -18,7 +18,7 @@
   position: relative;
   min-width: 450px;
   }
-  ._styles-module__wheel__1E7u3 {
+  ._1E7u3 {
   border-radius: 50%;
   border: 5px solid #A72810;
   box-shadow: 0 0 4px rgba(0, 0, 0, .3);
@@ -31,7 +31,7 @@
   width: 400px;
   }
     
-._styles-module__spin__1sp4O{
+._1sp4O{
   position: absolute;
   display: flex;
   align-items:center;
@@ -57,7 +57,7 @@
 
 
 
-._styles-module__arrow__35l6Q{
+._35l6Q{
   position: absolute;
   top:24px;
   left:50%;

@@ -37,25 +37,25 @@ function SvgWheelArrow(props) {
   }))));
 }
 
-var Styles = {"rewards-spin-game":"_styles-module__rewards-spin-game__2zZiG","canvas-container":"_styles-module__canvas-container__28Wol","wheel":"_styles-module__wheel__1E7u3","spin":"_styles-module__spin__1sp4O","arrow":"_styles-module__arrow__35l6Q"};
+var Styles = {"rewards-spin-game":"_2zZiG","canvas-container":"_28Wol","wheel":"_1E7u3","spin":"_1sp4O","arrow":"_35l6Q"};
 
-const SpinAndWin = forwardRef(({
-  data,
-  hideButton,
-  result,
-  time,
-  minTime,
-  maxTime,
-  removeButtonEffect,
-  fontSize,
-  fontFamily,
-  horizantalText
-}, ref) => {
-  const wheelRef = useRef();
-  const [state] = useState({
-    winnerAngle: 0
-  });
-  useLayoutEffect(() => {
+var SpinAndWin = forwardRef(function (_ref, ref) {
+  var data = _ref.data,
+    hideButton = _ref.hideButton,
+    result = _ref.result,
+    time = _ref.time,
+    minTime = _ref.minTime,
+    maxTime = _ref.maxTime,
+    removeButtonEffect = _ref.removeButtonEffect,
+    fontSize = _ref.fontSize,
+    fontFamily = _ref.fontFamily,
+    horizantalText = _ref.horizantalText;
+  var wheelRef = useRef();
+  var _useState = useState({
+      winnerAngle: 0
+    }),
+    state = _useState[0];
+  useLayoutEffect(function () {
     var wheelCanvas = document.getElementById('wheel');
     if (wheelCanvas && isCanvas(wheelCanvas)) {
       var wheel = wheelCanvas.getContext('2d');
@@ -64,16 +64,16 @@ const SpinAndWin = forwardRef(({
       var wheelRadius = Math.min(wheelX, wheelY);
       drawWheel(data, wheel, wheelX, wheelY, wheelRadius);
     }
-  }, []);
+  }, [data]);
   function isCanvas(obj) {
     return obj.tagName === 'CANVAS';
   }
-  const degToRad = deg => {
+  var degToRad = function degToRad(deg) {
     return deg * Math.PI / 180.0;
   };
-  const drawWheel = (list, wheel, wheelX, wheelY, wheelRadius) => {
+  var drawWheel = function drawWheel(list, wheel, wheelX, wheelY, wheelRadius) {
     var segment = 360 / list.length;
-    list.map((el, i) => {
+    list.map(function (el, i) {
       wheel.save();
       wheel.translate(wheelX, wheelY);
       wheel.rotate(degToRad(segment * i));
@@ -86,7 +86,7 @@ const SpinAndWin = forwardRef(({
       wheel.fill();
       wheel.fillStyle = 'white';
       horizantalText ? wheel.textAlign = 'start' : wheel.textAlign = 'end';
-      wheel.font = fontSize && fontFamily ? `${fontSize}px ${fontFamily}` : fontSize ? `${fontSize}px sans-serif` : fontFamily ? `18px ${fontFamily}` : '18px sans-serif';
+      wheel.font = fontSize && fontFamily ? fontSize + "px " + fontFamily : fontSize ? fontSize + "px sans-serif" : fontFamily ? "18px " + fontFamily : '18px sans-serif';
       wheel.transform = 'translate(50px, 100px)';
       if (horizantalText) {
         wheel.textAlign = 'center';
@@ -98,51 +98,53 @@ const SpinAndWin = forwardRef(({
       wheel.restore();
     });
   };
-  useImperativeHandle(ref, () => ({
-    handleSpin() {
-      let wheelCanvas = document.getElementById('wheel');
-      if (wheelCanvas) {
-        const freeSpinResult = result ? result : '23454';
-        let transitionTime = time ? time : minTime && maxTime && minTime > 0 && maxTime > 0 ? Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime : Math.floor(Math.random() * (4 - 3 + 1)) + 3;
-        wheelCanvas.style.transition = transitionTime + 's';
-        let winner = data.find(item => {
-          return item[0] === freeSpinResult;
-        });
-        if (!winner) {
-          winner = [''];
+  useImperativeHandle(ref, function () {
+    return {
+      handleSpin: function handleSpin() {
+        var wheelCanvas = document.getElementById('wheel');
+        if (wheelCanvas) {
+          var freeSpinResult = result ? result : '23454';
+          var transitionTime = time ? time : minTime && maxTime && minTime > 0 && maxTime > 0 ? Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime : Math.floor(Math.random() * (4 - 3 + 1)) + 3;
+          wheelCanvas.style.transition = transitionTime + 's';
+          var winner = data.find(function (item) {
+            return item[0] === freeSpinResult;
+          });
+          if (!winner) {
+            winner = [''];
+          }
+          var freeSpinGifts = [];
+          data.map(function (item) {
+            freeSpinGifts.push(item[0]);
+          });
+          var winnerIndex = freeSpinGifts.indexOf(winner[0]);
+          var offset = state.winnerAngle % 360;
+          state.winnerAngle = state.winnerAngle + 1800 - 360 * winnerIndex / freeSpinGifts.length - offset;
+          var deg = 'rotate(' + state.winnerAngle + 'deg)';
+          wheelCanvas.style.transform = deg;
         }
-        let freeSpinGifts = [];
-        data.map(item => {
-          freeSpinGifts.push(item[0]);
-        });
-        let winnerIndex = freeSpinGifts.indexOf(winner[0]);
-        let offset = state.winnerAngle % 360;
-        state.winnerAngle = state.winnerAngle + 1800 - 360 * winnerIndex / freeSpinGifts.length - offset;
-        let deg = 'rotate(' + state.winnerAngle + 'deg)';
-        wheelCanvas.style.transform = deg;
       }
-    }
-  }));
-  const handleSpin = () => {
-    let wheelCanvas = document.getElementById('wheel');
+    };
+  });
+  var handleSpin = function handleSpin() {
+    var wheelCanvas = document.getElementById('wheel');
     if (wheelCanvas) {
-      const freeSpinResult = result ? result : '23454';
-      let transitionTime = time ? time : minTime && maxTime && minTime > 0 && maxTime > 0 ? Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime : Math.floor(Math.random() * (4 - 3 + 1)) + 3;
+      var freeSpinResult = result ? result : '23454';
+      var transitionTime = time ? time : minTime && maxTime && minTime > 0 && maxTime > 0 ? Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime : Math.floor(Math.random() * (4 - 3 + 1)) + 3;
       wheelCanvas.style.transition = transitionTime + 's';
-      let winner = data.find(item => {
+      var winner = data.find(function (item) {
         return item[0] === freeSpinResult;
       });
       if (!winner) {
         winner = [''];
       }
-      let freeSpinGifts = [];
-      data.map(item => {
+      var freeSpinGifts = [];
+      data.map(function (item) {
         freeSpinGifts.push(item[0]);
       });
-      let winnerIndex = freeSpinGifts.indexOf(winner[0]);
-      let offset = state.winnerAngle % 360;
+      var winnerIndex = freeSpinGifts.indexOf(winner[0]);
+      var offset = state.winnerAngle % 360;
       state.winnerAngle = state.winnerAngle + 2520 - 360 * winnerIndex / freeSpinGifts.length - offset;
-      let deg = 'rotate(' + state.winnerAngle + 'deg)';
+      var deg = 'rotate(' + state.winnerAngle + 'deg)';
       wheelCanvas.style.transform = deg;
     }
   };
@@ -155,18 +157,6 @@ const SpinAndWin = forwardRef(({
     id: "wheel",
     className: Styles['wheel'],
     width: '450px',
-    height: '450px'
-  }), !hideButton && React__default.createElement("span", {
-    className: Styles['spin'],
-    onClick: () => removeButtonEffect ? '' : handleSpin()
-  }, "SPIN")), React__default.createElement("span", {
-    className: Styles['arrow']
-  }, React__default.createElement(SvgWheelArrow, null))));
-});
-
-export default SpinAndWin;
-//# sourceMappingURL=index.modern.js.map
- '450px',
     height: '450px'
   }), !hideButton && React__default.createElement("span", {
     className: Styles['spin'],

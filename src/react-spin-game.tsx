@@ -53,7 +53,7 @@ const SpinAndWin = forwardRef(
 
         drawWheel(data, wheel, wheelX, wheelY, wheelRadius)
       }
-    }, [])
+    }, [data])
     function isCanvas(
       obj: HTMLCanvasElement | HTMLElement
     ): obj is HTMLCanvasElement {

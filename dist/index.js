@@ -40,7 +40,7 @@ function SvgWheelArrow(props) {
   }))));
 }
 
-var Styles = {"rewards-spin-game":"_styles-module__rewards-spin-game__2zZiG","canvas-container":"_styles-module__canvas-container__28Wol","wheel":"_styles-module__wheel__1E7u3","spin":"_styles-module__spin__1sp4O","arrow":"_styles-module__arrow__35l6Q"};
+var Styles = {"rewards-spin-game":"_2zZiG","canvas-container":"_28Wol","wheel":"_1E7u3","spin":"_1sp4O","arrow":"_35l6Q"};
 
 var SpinAndWin = React.forwardRef(function (_ref, ref) {
   var data = _ref.data,
@@ -67,7 +67,7 @@ var SpinAndWin = React.forwardRef(function (_ref, ref) {
       var wheelRadius = Math.min(wheelX, wheelY);
       drawWheel(data, wheel, wheelX, wheelY, wheelRadius);
     }
-  }, []);
+  }, [data]);
   function isCanvas(obj) {
     return obj.tagName === 'CANVAS';
   }

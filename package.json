@@ -1,6 +1,6 @@
 {
   "name": "react-spin-game",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Made with create-react-library",
   "author": "ahmadalrasheed",
   "license": "MIT",
@@ -26,6 +26,7 @@
   "peerDependencies": {
     "react": "^16.0.0"
   },
+  "keywords": ["react spin game","react-spin-game","wheel of prizes" ,"react wheel of prizes", "wheel-of-prizes","spin and win" , "spin and win game" ,"spin to win game", "react spinner game" , "react wheel of gifts","react spin and win" , "spinner game"],
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
