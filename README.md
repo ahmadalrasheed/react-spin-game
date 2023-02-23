@@ -1,6 +1,6 @@
 # react-spin-game
 
-> Made with create-react-library
+> react-spin-game is a wheel of prizes game, spinning game build using reactjs
 
 [![NPM](https://img.shields.io/npm/v/react-spin-game.svg)](https://www.npmjs.com/package/react-spin-game) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
