@@ -71,7 +71,7 @@ interface SpinGameData {
 `fantasy`
 9. horizantalText: to switch the text to be horizontal instead of vertical
 * Example:
-`fantasy`
+`true`
 
 **Hint** :
 you can also pass `ref` prop to `SpinAndWin` component to extract the function responsible for the spinning of the wheel, if you wish to use it on another component.

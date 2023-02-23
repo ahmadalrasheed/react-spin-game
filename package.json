@@ -1,7 +1,7 @@
 {
   "name": "react-spin-game",
-  "version": "1.0.5",
-  "description": "Made with create-react-library",
+  "version": "1.0.6",
+  "description": "react-spin-game is a wheel of prizes game, spinning game build using reactjs",
   "author": "ahmadalrasheed",
   "license": "MIT",
   "repository": "ahmadalrasheed/react-spin-game",
